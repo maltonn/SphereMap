@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import SphereMap from './SphereMap';
 function App() {
+  const coords = [
+  ]
+  for(let i = 0; i < 100; i++){
+    let r= Math.random()*2-1
+    coords.push([
+      r,r,r
+    ])
+  }
+  for(let i = 0; i < 100; i++){
+    coords.push([
+      Math.random()*2-1,
+      Math.random()*2-1,
+      Math.random()*2-1
+    ])
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div style={{width: '80vmin',height: '80vmin'}}>
+        <SphereMap coords={coords}/>
+      </div>
     </div>
   );
 }
